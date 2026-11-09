@@ -2,8 +2,8 @@ import { Consulta } from "../model/Consulta.js";
 import { Medico } from "../model/Medico.js";
 import { Paciente } from "../model/Paciente.js";
 import { cadastrar, listar, deletar, atualizar, buscarPorId, alterarMedico, alterarPaciente } from "../repository/consultaRepository.js";
-import medicoRepository from "../repository/medicoRepository.js";
-import pacienteRepository from "../repository/pacienteRepository.js";
+import { buscarPorId as buscarMedicoPorId } from "../repository/medicoRepository.js";
+import { buscarPorId as buscarPacientePorId } from "../repository/pacienteRepository.js";
 
 export async function cadastrarConsulta(req, res) {
     try {
@@ -92,7 +92,7 @@ export async function atualizarConsulta(req, res) {
             return res.status(400).json({ mensagem: "Nenhuma informação atualizada no banco de dados." });
         }
 
-        return res.status(200).json({ mensagem: "Consulta atualizada com sucesso." });
+        return res.status(200).json({ mensagem: "Consulta updated com sucesso." });
     } catch (erro) {
         return res.status(500).json({ mensagem: "Erro ao atualizar consulta.", detalhe: erro.message });
     }
@@ -135,7 +135,7 @@ export async function vincularMedicoDaConsulta(req, res) {
             return res.status(404).json({ mensagem: "Consulta não encontrada." });
         }
 
-        const medico = await medicoRepository.buscarPorId(idMedico);
+        const medico = await buscarMedicoPorId(idMedico);
         if (!medico || medico.length === 0) {
             return res.status(404).json({ mensagem: "Médico não encontrado. ID inexistente." });
         }
@@ -178,7 +178,7 @@ export async function vincularPacienteDaConsulta(req, res) {
             return res.status(404).json({ mensagem: "Consulta não encontrada." });
         }
 
-        const paciente = await pacienteRepository.buscarPorId(idPaciente);
+        const paciente = await buscarPacientePorId(idPaciente);
         if (!paciente || paciente.length === 0) {
             return res.status(404).json({ mensagem: "Paciente não encontrado. ID inexistente." });
         }
@@ -198,7 +198,7 @@ export async function removerPacienteDaConsulta(req, res) {
 
         const consulta = await buscarPorId(idConsulta);
         if (!consulta || consulta.length === 0) {
-            return res.status(404).json({ mensagem: "Consulta não encontrada." });
+            return res.status(404).json({ message: "Consulta não encontrada." });
         }
 
         await alterarPaciente(idConsulta, null);
