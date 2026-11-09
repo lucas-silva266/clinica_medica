@@ -1,146 +1,145 @@
 -- Inserção de dados
 
-http://localhost:3000/medico
+--
+http://localhost:3001/medico
 POST
 Content-Type: application/json
 
 {
-"nome": "Dra. Ana Costa",
-"crm": "123456",
-"especialidade": "Pediatria"
+  "nome": "Dra. Ana Costa",
+  "crm": "123456",
+  "especialidade": "Pediatria"
 }
 
 --
-http://localhost:3000/medico
+http://localhost:3001/medico
 POST
 Content-Type: application/json
 
 {
-"nome": "Dr. Bruno Silva",
-"crm": "654321",
-"especialidade": "Cardiologia"
+  "nome": "Dr. Bruno Silva",
+  "crm": "654321",
+  "especialidade": "Cardiologia"
 }
 
 --
-http://localhost:3000/medico
+http://localhost:3001/medico
 POST
 Content-Type: application/json
 
 {
-"nome": "Dra. Carla Souza",
-"crm": "789101",
-"especialidade": "Dermatologia"
+  "nome": "Dra. Carla Souza",
+  "crm": "789101",
+  "especialidade": "Dermatologia"
 }
 
 --
-http://localhost:3000/paciente
+http://localhost:3001/paciente
 POST
 Content-Type: application/json
 
 {
-"nome": "Lucas Pereira",
-"cpf": "11122233344",
-"data_nascimento": "1995-05-12"
+  "nome": "Lucas Pereira",
+  "cpf": "11122233344",
+  "telefone": "47999991111"
 }
 
 --
-http://localhost:3000/paciente
+http://localhost:3001/paciente
 POST
 Content-Type: application/json
 
 {
-"nome": "Mariana Santos",
-"cpf": "55566677788",
-"data_nascimento": "1990-10-22"
+  "nome": "Mariana Santos",
+  "cpf": "55566677788",
+  "telefone": "47999992222"
 }
 
 --
-http://localhost:3000/paciente
+http://localhost:3001/paciente
 POST
 Content-Type: application/json
 
 {
-"nome": "Roberto Oliveira",
-"cpf": "99988877766",
-"data_nascimento": "1982-03-05"
+  "nome": "Roberto Oliveira",
+  "cpf": "99988877766",
+  "telefone": "47999993333"
 }
 
 --
-http://localhost:3000/consulta
+http://localhost:3001/consulta
 POST
 Content-Type: application/json
 
 {
-"data_hora": "2026-12-01 09:00:00",
-"motivo": "Consulta de rotina anual",
-"status_consulta": "rascunho"
+  "data_hora": "2026-12-01 09:00:00",
+  "motivo": "Consulta de rotina anual",
+  "status_consulta": "rascunho"
 }
 
 --
-http://localhost:3000/consulta
+http://localhost:3001/consulta
 POST
 Content-Type: application/json
 
 {
-"data_hora": "2026-12-01 10:30:00",
-"motivo": "Fortes dores de cabeça persistentes",
-"status_consulta": "agendada"
+  "data_hora": "2026-12-01 10:30:00",
+  "motivo": "Fortes dores de cabeça persistentes",
+  "status_consulta": "agendada"
 }
 
 --
-http://localhost:3000/consulta
+http://localhost:3001/consulta
 POST
 Content-Type: application/json
 
 {
-"data_hora": "2026-12-02 14:00:00",
-"motivo": "Acompanhamento pós-exames laboratoriais",
-"status_consulta": "agendada"
+  "data_hora": "2026-12-02 14:00:00",
+  "motivo": "Acompanhamento pós-exames laboratoriais",
+  "status_consulta": "agendada"
 }
 
 --
-http://localhost:3000/consulta
+http://localhost:3001/consulta
 POST
 Content-Type: application/json
 
 {
-"data_hora": "2026-12-03 16:15:00",
-"motivo": "Avaliação de alergia cutânea recente",
-"status_consulta": "rascunho"
+  "data_hora": "2026-12-03 16:15:00",
+  "motivo": "Avaliação de alergia cutânea recente",
+  "status_consulta": "rascunho"
 }
 
 --
-http://localhost:3000/consulta
+http://localhost:3001/consulta
 POST
 Content-Type: application/json
 
 {
-"data_hora": "2026-12-04 11:00:00",
-"motivo": "Check-up cardiológico preventivo",
-"status_consulta": "agendada"
+  "data_hora": "2026-12-04 11:00:00",
+  "motivo": "Check-up cardiológico preventivo",
+  "status_consulta": "agendada"
 }
 
 
 -- Atualizando dados
 
 --
-http://localhost:3000/consulta/1
+http://localhost:3001/consulta/1
 PATCH
 Content-Type: application/json
 
-Atualizar Status da Consulta 1
 {
-"status_consulta": "agendada"
+  "status_consulta": "agendada"
 }
 
 --
-http://localhost:3000/medico/2
+http://localhost:3001/medico/2
 PATCH
 Content-Type: application/json
 
-Atualizar Especialidade do Médico 2
 {
-"especialidade": "Cardiologia Avançada"
+  "especialidade": "Cardiologia Avançada"
 }
 
 
@@ -149,20 +148,18 @@ Atualizar Especialidade do Médico 2
 -- Listando dados
 
 --
-http://localhost:3000/consulta
+http://localhost:3001/consulta
 GET
 Content-Type: application/json
 
-Listar Todas as Consultas
 {}
 
 
 --
-http://localhost:3000/medico
+http://localhost:3001/medico
 GET
 Content-Type: application/json
 
-Listar Todos os Médicos
 {}
 
 
@@ -170,20 +167,18 @@ Listar Todos os Médicos
 -- Buscando dados por ID
 
 --
-http://localhost:3000/consulta/1
+http://localhost:3001/consulta/1
 GET
 Content-Type: application/json
 
-Buscar Consulta por ID 1
 {}
 
 
 --
-http://localhost:3000/paciente/2
+http://localhost:3001/paciente/2
 GET
 Content-Type: application/json
 
-Buscar Paciente por ID 2
 {}
 
 
@@ -191,100 +186,84 @@ Buscar Paciente por ID 2
 -- Deletando dados
 
 ---
-http://localhost:3000/consulta/5
+http://localhost:3001/consulta/5
 DELETE
 Content-Type: application/json
 
-Deletar Consulta 5
 {}
 
 --
-http://localhost:3000/medico/3
+http://localhost:3001/medico/3
 DELETE
 Content-Type: application/json
 
-Deletar Médico 3
 {}
-
-
-
-Excelente! O teste passou com sucesso (`200 OK`), o que confirma que a rota e a ligação à base de dados estão a funcionar perfeitamente.
-
-Aqui tens o bloco completo com o restante dos testes (vínculo, consulta com dados estruturados, remoção de vínculo e casos de erro/validação) estruturados exatamente com os comentários `--` e prontos a colar na tua documentação:
-
 
 
 -- Vínculo entre consulta e recursos relacionados
 
 --
-http://localhost:3000/consulta/1/medico/2
+http://localhost:3001/consulta/1/medico/2
 PATCH
 Content-Type: application/json
 
-Vincular Consulta 1 ao Médico 2
 {}
 
 --
-http://localhost:3000/consulta/1/paciente/1
+http://localhost:3001/consulta/1/paciente/1
 PATCH
 Content-Type: application/json
 
-Vincular Consulta 1 ao Paciente 1
 {}
 
 
 -- Consulta da consulta apresentando os dados do médico e paciente com LEFT JOIN
 
 --
-http://localhost:3000/consulta/1
+http://localhost:3001/consulta/1
 GET
 Content-Type: application/json
 
-Consultar Consulta 1 com Dados de Médico e Paciente Vinculados
 {}
 
 
 -- Remoção do vínculo sem excluir os registros principais
 
 --
-http://localhost:3000/consulta/1/remover-medico
+http://localhost:3001/consulta/1/remover-medico
 PATCH
 Content-Type: application/json
 
-Remover Vínculo do Médico da Consulta 1
 {}
 
 
 -- Tentativa de vincular médico ou recurso inexistente
 
 --
-http://localhost:3000/consulta/1/medico/999
+http://localhost:3001/consulta/1/medico/999
 PATCH
 Content-Type: application/json
 
-Tentativa de Vincular Médico Inexistente
 {}
 
 
 -- Tentativa de buscar um ID inexistente
 
 --
-http://localhost:3000/consulta/999
+http://localhost:3001/consulta/999
 GET
 Content-Type: application/json
 
-Tentativa de Buscar ID Inexistente
 {}
 
 
 -- Rejeição de pelo menos um cadastro com dados inválidos
 
 --
-http://localhost:3000/consulta
+http://localhost:3001/consulta
 POST
 Content-Type: application/json
 
-Rejeição de Cadastro de Consulta com Dados Inválidos
 {
-"motivo": "Dor"
+  "motivo": "Dor"
 }
